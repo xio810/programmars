@@ -3,15 +3,21 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = sc.nextInt();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
 
-        for (int i = 1; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
+        int answer = 0;
 
-                System.out.print("*");
-            }
-            System.out.println("");
+        if (a > b) {
+            int tmp = a;
+            a = b;
+            b = tmp;
         }
+
+        for (int i = a; i <= b; i++) {
+            answer += i;
+        }
+
+        System.out.println(answer);
     }
 }
