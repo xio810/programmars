@@ -5,14 +5,16 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        int answer = 0;
-
         for (int i = 1; i <= n; i++) {
-            if (n % i == 0) {
-                answer += i;
-            }
+            if (n == (i * i)) {
+                System.out.println("양의정수 제곱");
+                System.out.println("원 제곱된 숫자" + i);
+                System.out.println("+1 제곱된 숫자 리턴" + (i + 1) * (i + 1));
+                break;
+            } else
+                System.out.println(-1);
+
         }
-        System.err.println("answer : " + answer);
 
     }
 }
