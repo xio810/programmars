@@ -1,12 +1,14 @@
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        // Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         // int n = sc.nextInt();
+        String str = sc.nextLine();
 
-        String a = "20";
-        Integer b = Integer.parseInt(a);
-        System.out.println(b);
-        System.out.println(a.getClass().getName());
-        System.out.println(b.getClass().getName());
+        Integer answer = Integer.parseInt(str);
+
+        System.out.println(answer);
+        System.out.println("answer type : " + answer.getClass().getName());
     }
 }
