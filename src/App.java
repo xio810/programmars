@@ -5,19 +5,26 @@ public class App {
         // Scanner sc = new Scanner(System.in);
         // int n = sc.nextInt();
 
-        class Solution {
-            public boolean solution(String s) {
-                if (s.length() == 4 || s.length() == 6) {
-                    for (int i = 0; i < s.length(); i++) {
-                        char ch = s.charAt(i);
-                        if (ch < '0' || ch > '9')
-                            return false;
-                    }
-                    return true;
-                } else
-                    return false;
-            }
+        int[] arr = { 1, 2, 3, 4, };
+        int sum = 0;
+        double avg = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + "/");
+            sum += arr[i];
         }
+        avg = sum / arr.length;
+
+        System.out.println("sum : " + sum);
+        System.out.println("avg : " + avg);
+
+        /*
+         * class Solution { public double solution(int[] arr) { double answer = 0;
+         * double sum = 0;
+         * 
+         * for (int i = 0; i < arr.length; i++) { sum += arr[i]; } answer = sum /
+         * arr.length; return answer; } }
+         */
 
     }
 }
