@@ -5,18 +5,17 @@ public class App {
         // Scanner sc = new Scanner(System.in);
         // int n = sc.nextInt();
 
-        class Solution {
-            public String solution(String phone_number) {
-                String answer = "";
-                for (int i = 0; i < phone_number.length(); i++) {
-                    if (i < phone_number.length() - 4) {
-                        answer += "*";
-                    } else {
-                        answer += phone_number.charAt(i);
-                    }
-                }
-                return answer;
-            }
-        }
+        // charAt() => string타입으로 받은 문자열을 char타입으로 한 글자만 받는 함수
+        String str = "Hello World";
+        System.out.println(str.charAt(0)); // H
+        System.out.println(str.charAt(1)); // e
+
+        String a = "0";
+        int b = a.charAt(0); // 48
+        b = a.charAt(0) - 48; // 0
+        System.out.println(b);
+
+        String len = "hello world";
+        System.out.println(len.length());
     }
 }
