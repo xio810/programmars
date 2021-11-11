@@ -5,23 +5,14 @@ public class App {
         // Scanner sc = new Scanner(System.in);
         // int n = sc.nextInt();
 
-        class Solution {
-            boolean solution(String s) {
-                boolean answer = true;
-                int cnt = 0;
-                char ch = ' ';
+        int[] arr = new int[10];
 
-                for (int i = 0; i < s.length(); i++) {
-                    ch = s.charAt(i);
-                    if (ch == 'p' || ch == 'P')
-                        cnt++;
-                    else if (ch == 'y' || ch == 'Y')
-                        cnt--;
-                }
-                if (cnt != 0)
-                    return false;
-                return true;
-            }
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (i + 1) * 10;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
         }
     }
 }
