@@ -1,50 +1,53 @@
 public class VendingMachine {
 
-    int inputedMoney = 0;
+    int totalMoney = 0;
+    Beverage[] beverages = new Beverage[3];
 
-    String bev0 = "콜라";
-    String bev1 = "사이다";
-    String bev2 = "커피";
-
-    int cost0 = 1000;
-    int cost1 = 1200;
-    int cost2 = 800;
-
-    void setInputedMoney(int money) {
-        inputedMoney = inputedMoney + money;
-        System.out.println("현재 투입된 금액은 " + inputedMoney + "원입니다.");
+    // 생성자 - 자판기를 만들때 필요한 것들을 세팅(음료수)
+    VendingMachine() {
+        beverages[0] = new Beverage(1000, "콜라");
+        beverages[1] = new Beverage(1200, "사이다");
+        beverages[2] = new Beverage(800, "커피");
     }
 
+    // 자판기 기능1 - 음료수 목록 제공
     void printAllBeverages() {
-        System.out.println("0. " + bev0 + " : " + cost0);
-        System.out.println("1. " + bev1 + " : " + cost1);
-        System.out.println("2. " + bev2 + " : " + cost2);
+
+        for (int i = 0; i < beverages.length; i++) {
+            System.out.println(i + "." + beverages[i].name + " : " + beverages[i].price);
+        }
+        // 출력 : 0.콜라 : 1000
+        // 출력 : 1.사이다 : 1200
+        // 출력 : 2.커피 : 800
     }
 
-    String getBeverage(int num) {
-        String target = null;
-        int targetPrice = 0;
+    // 자판기 기능2 - 금액 투입
+    void setInputedMoney(int money) {
+        totalMoney = totalMoney + money;
+        System.out.println("현재 투입된 금액은 " + totalMoney + "원입니다.");
+    }
 
-        if (num == 0) {
-            target = bev0;
-            targetPrice = cost0;
-        } else if (num == 1) {
-            target = bev1;
-            targetPrice = cost1;
+    // 자판기 기능3 - 음료 제공
+    String getBeverage(int no) {
+
+        Beverage target = beverages[no];
+        String beverageName = "";
+        int remainderMoney = 0;
+
+        // 잔액이 부족한 경우
+        if (totalMoney < target.price) {
+            System.out.println("잔액이 부족합니다.");
         } else {
-            target = bev2;
-            targetPrice = cost2;
+            // 출력 : 사이다를 뽑으셨습니다.
+            System.out.println(target.name + "를 뽑으셨습니다.");
+            remainderMoney = totalMoney - target.price;
+            totalMoney = remainderMoney;
+
+            // 출력 : 잔액은 800원입니다.
+            System.out.println("잔액은 " + remainderMoney + "원입니다.");
+
         }
 
-        if (inputedMoney >= targetPrice) {
-            int balance = inputedMoney - targetPrice;
-            System.out.println(target + "(을)를 뽑았습니다.");
-            System.out.println("잔액은 " + balance + "원 입니다.");
-            return target;
-        } else {
-            System.out.println("잔액부족");
-            return null;
-        }
-
+        return target.name;
     }
 }
