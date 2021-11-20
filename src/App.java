@@ -14,6 +14,11 @@ public class App {
 
         고무오리 a고무오리 = new 고무오리();
         a고무오리.날다();
+        // 출력 : 저는 날 수 없어요. ㅜㅠ
+
+        고무2오리 a고무2오리 = new 고무2오리();
+        a고무2오리.날다();
+        // 출력 : 저는 날 수 없어요. ㅜㅠ
 
     }
 
@@ -35,6 +40,14 @@ class 흰오리 extends 오리 {
 
 class 고무오리 extends 오리 {
     public void 날다() {
-        System.out.println("고무오리 : 저는 날 수 없어요");
+        System.out.println("저는 날 수 없어요. ㅜㅠ");
     }
 }
+
+class 고무2오리 extends 고무오리 {
+
+}
+/*
+ * class 고무2오리 extends 오리 { public void 날다() {
+ * System.out.println("저는 날 수 없어요. ㅜㅠ"); } }
+ */
