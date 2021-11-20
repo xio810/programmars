@@ -44,10 +44,12 @@ class 고무오리 extends 오리 {
     }
 }
 
+// 날다() 메서드 중복 제거한 버전 (오리 시뮬 7)
 class 고무2오리 extends 고무오리 {
 
 }
+
 /*
- * class 고무2오리 extends 오리 { public void 날다() {
+ * (날다 메서드 중복 제거 안한 버전 (오리 시뮬 6)) class 고무2오리 extends 오리 { public void 날다() {
  * System.out.println("저는 날 수 없어요. ㅜㅠ"); } }
  */
