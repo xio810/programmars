@@ -6,90 +6,36 @@ public class App {
     public static void main(String[] args) throws Exception {
         // Scanner sc = new Scanner(System.in);
         // int n = sc.nextInt();
-        샤오미Tv a샤오미Tv = new 샤오미Tv();
-        삼성Tv a삼성Tv = new 삼성Tv();
-        LGTv aLGTv = new LGTv();
 
-        System.out.println("== 표준Tv 리모콘 들여온 후 ==");
+        사람 a홍길동 = new 홍길동();
+        System.out.printf("== 홍길동 정보 ==\n");
+        System.out.printf("이름 : %s\n", a홍길동.이름); // 홍길동
+        System.out.printf("나이 : %s\n", a홍길동.나이); // 22
+        사람 a홍길순 = new 홍길순();
+        System.out.printf("== 홍길순 정보 ==\n");
+        System.out.printf("이름 : %s\n", a홍길순.이름); // 홍길순
+        System.out.printf("나이 : %s\n", a홍길순.나이); // 22
 
-        // 표준Tv 리모콘을 저장할 수 있는 변수를 만든다.
-        표준Tv a표준Tv;
-
-        // a표준Tv 변수에 샤오미Tv 객체를 연결한다.
-        // 중요 : 다른말로 a샤오미Tv 변수안에 있던 샤오미Tv 리코몬을 표준Tv 리모콘화 해서 a표준Tv변수에 넣는다.
-        a표준Tv = a샤오미Tv;
-        a표준Tv.켜기();
-        // 출력 : 샤오기TV 켜집니다.
-        a표준Tv.끄기();
-        // 출력 : 샤오기TV 꺼집니다.
-
-        // a표준Tv 변수에 삼성Tv 객체를 연결한다.
-        a표준Tv = a삼성Tv;
-        a표준Tv.켜기();
-        // 출력 : 삼성TV 켜집니다.
-        a표준Tv.끄기();
-        // 출력 : 삼성TV 꺼집니다.
-
-        // a표준Tv 변수에 LGTv 객체를 연결한다.
-        a표준Tv = aLGTv;
-        a표준Tv.켜기();
-        // 출력 : LGTV 켜집니다.
-        a표준Tv.끄기();
-        // 출력 : LGTV 꺼집니다.
-
-        // LGTV만의 고유 기능을 표준Tv 리모콘을 이용해서 호출하기 => 불가능
-        // (LGTv) => a표준Tv 변수에 있던 표준Tv 리모콘이 LGTv리모콘화 해서 `aLGTv2` 변수에 들어간다.
-        LGTv aLGTv2 = (LGTv) a표준Tv;
-        aLGTv2.게임모드전환();
     }
 }
 
-class 표준Tv {
-    void 켜기() {
-    }
+class 사람 {
+    String 이름;
+    int 나이;
 
-    void 끄기() {
-    }
-}
-
-class 샤오미Tv extends 표준Tv {
-    void 켜기() {
-        System.out.println("샤오미Tv 켜집니다.");
-    }
-
-    void 끄기() {
-        System.out.println("샤오미Tv 꺼집니다.");
-    }
-
-    void vr켜기() {
-        System.out.println("샤오미Tv vr켜기!");
+    사람() {
+        this.나이 = 22;
     }
 }
 
-class 삼성Tv extends 표준Tv {
-    void 켜기() {
-        System.out.println("삼성Tv 켜집니다.");
-    }
-
-    void 끄기() {
-        System.out.println("삼성Tv 꺼집니다.");
-    }
-
-    void vr켜기() {
-        System.out.println("삼성Tv vr켜기!");
+class 홍길동 extends 사람 {
+    홍길동() {
+        this.이름 = "홍길동";
     }
 }
 
-class LGTv extends 표준Tv {
-    void 켜기() {
-        System.out.println("LGTv 켜집니다.");
-    }
-
-    void 끄기() {
-        System.out.println("LGTv 꺼집니다.");
-    }
-
-    void 게임모드전환() {
-        System.out.println("LGTv 게임모드전환!");
+class 홍길순 extends 사람 {
+    홍길순() {
+        this.이름 = "홍길순";
     }
 }
