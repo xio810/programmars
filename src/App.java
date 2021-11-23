@@ -4,19 +4,29 @@ public class App {
     public static void main(String[] args) throws Exception {
         // Scanner sc = new Scanner(System.in);
         // int n = sc.nextInt();
-        사람 a사람 = new 사람();
+        전사 a전사 = new 전사();
 
-        a사람.나이 = 20;
-        a사람.a왼팔 = new 팔();
+        a전사.나이 = 20;
+        a전사.a무기 = new 활();
+        a전사.a무기 = new 칼();
     }
 }
 
-class 사람 {
-    // 클래스안에 변수를 정의 할 수 있다.
+class 전사 {
     int 나이;
-    팔 a왼팔;
+
+    무기 a무기;
+
 }
 
-class 팔 {
+class 무기 {
+
+}
+
+class 활 extends 무기 {
+
+}
+
+class 칼 extends 무기 {
 
 }
