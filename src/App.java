@@ -1,18 +1,27 @@
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 public class App {
     public static void main(String[] args) throws Exception {
         // Scanner sc = new Scanner(System.in);
         // int n = sc.nextInt();
-        Map<String, Integer> ages2 = new LinkedHashMap<>();
-        ages2.put("철수", 22);
-        ages2.put("유리", 23);
-        ages2.put("맹구", 24);
+        사람 a사람 = new 사람();
 
-        for (String 이름 : ages2.keySet()) {
-            System.out.println(이름 + " : " + ages2.get(이름));
+        a사람.setId(20);
+        System.out.println("제 번호는 " + a사람.getId() + " 입니다.");
 
-        }
+        // 출력 : 제 번호는 20 입니다.
+
     }
+}
+
+class 사람 {
+    // private => 외부로 공개되지 않는다., 리모콘에 노출되지 않는다.
+    private int id;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
 }
