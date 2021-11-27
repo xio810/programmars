@@ -1,27 +1,24 @@
+import java.util.ArrayList;
+
 public class App {
     public static void main(String[] args) throws Exception {
         // Scanner sc = new Scanner(System.in);
         // int n = sc.nextInt();
-        사람 a사람 = new 사람();
+        ArrayList ar = new ArrayList();
+        ar.add(100);
+        ar.add(200);
+        ar.add(300);
 
-        a사람.setId(20);
-        System.out.println("제 번호는 " + a사람.getId() + " 입니다.");
+        System.out.println(ar.get(0));
+        System.out.println(ar.size());
+        System.out.println(ar.get(1));
 
-        // 출력 : 제 번호는 20 입니다.
-
+        ar.remove(2);
+        System.out.println(ar.size());
     }
 }
 
-class 사람 {
-    // private => 외부로 공개되지 않는다., 리모콘에 노출되지 않는다.
-    private int id;
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-}
+// class ArrayList {
+// void add(int data) {
+// }
+// }
